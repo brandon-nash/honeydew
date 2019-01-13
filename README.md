@@ -10,7 +10,7 @@ This app was created using Angular's CLI (https://cli.angular.io/).
 
 As with your typical todo app you can add new *dews* to your Honeydew list. *Dews* can be marked as completed which crosses them off in the list. You can also **Harvest** the *dews* to remove all existing *dews* and start fresh.
 
-![Honeydew](resources/HoneydewScreenshot.png)
+![Honeydew](https://github.com/brandon-nash/honeydew/blob/master/resources/HoneydewScreenshot.PNG)
 
 ### Running the app
 
