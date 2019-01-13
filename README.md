@@ -1,27 +1,48 @@
 # Honeydew
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+### A spin on the classic todo app in Angular
 
-## Development server
+**Honeydew** is the brainchild of my experience learning Angular. I decided to put a spin on the classic todo app and create a "honey-do" (Honeydew) list. I also wanted to experiment with Google's Firestore (https://firebase.google.com/products/firestore/) while I was at it.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Overview
 
-## Code scaffolding
+This app was created using Angular's CLI (https://cli.angular.io/). 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+As with your typical todo app you can add new *dews* to your Honeydew list. *Dews* can be marked as completed which crosses them off in the list. You can also **Harvest** the *dews* to remove all existing *dews* and start fresh.
 
-## Build
+### Running the app
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Using the Angular CLI makes running the Honeydew app as easy as ```ng serve --open```
 
-## Running unit tests
+By default, this will serve up the app at this url http://localhost:4200/honeydew .
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You can also broadcast it this way ```ng serve --host 0.0.0.0``` to open it up to anyone in your network. This is what I do so that my wife can properly update my Honeydew list. You'll just need to replace "localhost" in the url above with your machine's IP address.
 
-## Running end-to-end tests
+### Firestore Configuration
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Firestore is a cloud database system that performs live syncing of your data from storage to the clients accessing it. This is a great solution for a list being shared between multiple users.
 
-## Further help
+Getting set up with Firestore is pretty simple. You can pretty much find out everything you need to know/do at this link (https://firebase.google.com/docs/web/setup)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+I'm using Google's Spark plan which is the free, hobbyist level account. It provides more than enough storage and bandwith to run Honeydew. Obviously you can set up other paid plans if you'd like but anyone can run Honeydew on the Spark setup.
+
+Once you have your Firestore account and project set up you'll need to configure Honeydew to use your particular Firestore database. 
+
+Update the Firestore (firebase) key data in the environment file(s) in this directory **/src/environments**.
+
+```
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: "##API_KEY##",
+    authDomain: "##AUTH_DOMAIN##",
+    databaseURL: "##DATABASE_URL##",
+    projectId: "##PROJECT_ID##",
+    storageBucket: "",
+    messagingSenderId: "##MESSAGING_SENDER_ID"
+  }
+};
+```
+
+ I've included two environment files for both test and production, though I'm really only using one environment. 
+

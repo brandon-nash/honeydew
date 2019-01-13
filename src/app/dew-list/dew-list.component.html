@@ -1,0 +1,30 @@
+<div class="dew-list-wrapper">
+  <div class="row justify-content-center form-input">
+    <div class="col-sm-3">
+        <input type="text" class="form-control" placeholder="new dew name" size="25" #txtNewDewName />
+    </div>
+    <br class="mobile-separator" />
+    <br class="mobile-separator" />
+    <div class="col-sm-4">
+      <input type="text" class="form-control" placeholder="new dew description" #txtNewDewDescription/>
+    </div>
+    <br class="mobile-separator" />
+    <br class="mobile-separator" />
+    <input type="button" id="btnAddNewDew" class="btn btn-primary mb-2" value="Add" (click)="addNewDew(txtNewDewName, txtNewDewDescription)" />
+  </div>
+  <br />
+  <div class="row top-buffer justify-content-center">
+    <ul class="dews">
+      <li *ngFor="let dew of dews">
+        <input type="checkbox" [checked]="dew.completed" (change)="updateDewCompleted(dewCompleted.checked, dew)" #dewCompleted/>&nbsp;
+        <span [class.dew-completed]="dew.completed"><strong>{{dew.name}}</strong> : {{dew.description}}</span>
+      </li>
+    </ul>
+  </div>
+  <br />
+  <div class="row top-buffer justify-content-center">
+    <span style="font-size: 1.4em;">
+      <a href="#" (click)="harvestDews()">Harvest Dews</a>
+    </span>
+</div>
+</div>
