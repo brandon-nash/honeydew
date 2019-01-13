@@ -28,7 +28,7 @@ I'm using Google's Spark plan which is the free, hobbyist level account. It prov
 
 Once you have your Firestore account and project set up you'll need to configure Honeydew to use your particular Firestore database. 
 
-Update the Firestore (firebase) key data in the environment file(s) in this directory **/src/environments**.
+Update the Firestore (firebase) key data in the environment file in this directory **/src/environments**.
 
 ```
 export const environment = {
@@ -43,6 +43,3 @@ export const environment = {
   }
 };
 ```
-
- I've included two environment files for both test and production, though I'm really only using one environment. 
-
