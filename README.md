@@ -10,11 +10,13 @@ This app was created using Angular's CLI (https://cli.angular.io/).
 
 As with your typical todo app you can add new *dews* to your Honeydew list. *Dews* can be marked as completed which crosses them off in the list. You can also **Harvest** the *dews* to remove all existing *dews* and start fresh.
 
+![Honeydew](resources/HoneydewScreenshot.png)
+
 ### Running the app
 
 Using the Angular CLI makes running the Honeydew app as easy as ```ng serve --open```
 
-By default, this will serve up the app at this url http://localhost:4200/honeydew .
+By default, this will serve up the app at this url http://localhost:4200/ .
 
 You can also broadcast it this way ```ng serve --host 0.0.0.0``` to open it up to anyone in your network. This is what I do so that my wife can properly update my Honeydew list. You'll just need to replace "localhost" in the url above with your machine's IP address.
 
