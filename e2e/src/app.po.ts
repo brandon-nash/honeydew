@@ -5,7 +5,16 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
+  // Main UI elements
+  getHeaderText() {
     return element(by.css('app-root h1')).getText();
+  }
+
+  getAddNewDewButton() {
+    return element(by.id('btnAddNewDew'));
+  }
+
+  getHarvestDewsButton() {
+    return element(by.id('btnHarvestDews'));
   }
 }
