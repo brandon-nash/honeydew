@@ -13,13 +13,13 @@
     <input type="button" id="btnAddNewDew" class="btn btn-primary mb-2" value="Add" (click)="addNewDew(txtNewDewName, txtNewDewDescription)" />
   </div>
   <br />
-  <div class="row top-buffer justify-content-center">
-    <ul class="dews">
-      <li *ngFor="let dew of dews">
-        <input type="checkbox" [checked]="dew.completed" (change)="updateDewCompleted(dewCompleted.checked, dew)" #dewCompleted/>&nbsp;
-        <span [class.dew-completed]="dew.completed"><strong>{{dew.name}}</strong> : {{dew.description}}</span>
-      </li>
-    </ul>
+  <div class="row top-buffer d-flex flex-column dews" cdkDropList (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let dew of dews" class="dew-drag text-center" cdkDrag>
+      <div class="dewpop">
+          <input type="checkbox" [checked]="dew.completed" (change)="updateDewCompleted(dewCompleted.checked, dew)" #dewCompleted/>&nbsp;
+          <span [class.dew-completed]="dew.completed"><strong>{{dew.name}}</strong> : {{dew.description}}</span>
+      </div>
+    </div>
   </div>
   <br />
   <div class="row top-buffer justify-content-center">

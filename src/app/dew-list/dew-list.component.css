@@ -2,6 +2,15 @@
     .dews {
         font-size: 1.2em;
     }
+
+    .dewpop {
+        width: 50%;
+        margin-left: 2%;
+     }
+
+     .dew-drag {
+         height: 25px;
+     }
 }
 
 @media screen and (min-width: 601px) {
@@ -33,4 +42,13 @@
 
 .form-input {
     flex-wrap: wrap;
+}
+
+.dew-drag {
+    height: 45px;
+}
+
+.dewpop {
+    width: 95%;
+    margin-left: 2.5%;
 }

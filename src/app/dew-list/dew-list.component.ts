@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Dew } from '../dew';
 import { DewService } from '../dew.service';
 
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-dew-list',
   templateUrl: './dew-list.component.html',
@@ -41,5 +43,9 @@ export class DewListComponent implements OnInit {
 
   harvestDews() {
     this.dewService.removeAllDews();
+  }
+
+  drop(event: CdkDragDrop<Dew[]>) {
+    moveItemInArray(this.dews, event.previousIndex, event.currentIndex);
   }
 }
